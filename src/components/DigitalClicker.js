@@ -1,27 +1,26 @@
 // Code DigitalClicker Component Here
 import React from 'react';
 
-export default class ClickityClick extends React.Component {
+export default class DigitalClicker extends React.Component {
   constructor() {
     super();
 
     // Define the initial state:
     this.state = {
-      hasBeenClicked: false
+      timesClicked: 0
     };
   }
 
   handleClick = () => {
     this.setState({
-      hasBeenClicked: true
+      timesClicked: this.state.timesClicked + 1
     })
   };
 
   render() {
     return (
       <div>
-        <p>I have {this.state.hasBeenClicked ? null : 'not'} been clicked!</p>
-        <button onClick={this.handleClick}>Click me!</button>
+        <button onClick={this.handleClick}>{this.state.timesClicked}</button>
       </div>
     );
   }
